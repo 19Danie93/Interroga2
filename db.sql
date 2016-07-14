@@ -63,8 +63,10 @@ create table respuesta(
                            );
 
 create table usuariopartida(
+      idusupartida int not null,
       idusu int not null,
       idpartida int not null,
+      PRIMARY KEY(idusupartida),
       FOREIGN KEY(idusu) REFERENCES usuario(idusu),
       FOREIGN KEY(idpartida) REFERENCES partida(idpartida)
 );
@@ -77,7 +79,7 @@ create table preguntapartida(
 );
 
 insert into rol values(1,'El administrador, encargado de crear partidas, agregar temar, preguntas y respuestas','Administrador');
-insert into rol values(2,'El usuario, encargado de administrar su cuenta y ser participe de una partida','Usuario');                                                      
+insert into rol values(2,'El usuario, encargado de administrar su cuenta y ser participe de una partida','Usuario');
 insert into usuario values(1,'00112e8c7e','admin','admin','admin',0,'admin@admin','00112e8c7e');
 insert into usuariorol values(1,1);
 

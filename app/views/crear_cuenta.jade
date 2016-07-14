@@ -47,47 +47,55 @@ html(lang='es')
                             div(class="col-xs-12 col-sm-8 col-sm-offset-2")
                                 
                                 div(class="group-material")               
-                                    input(value=datos.alias name="alias" type="text" class="material-control tooltips-general" placeholder="Alias" required=""  maxlength="50" data-toggle="tooltip" data-placement="top" title="Alias")
+                                    input(data-error=".errorTxt1" value=datos.alias name="alias" type="text" class="material-control" placeholder="Ingrese Su Alias" required="" maxlength="50"  title="")
+                                    div(class="errorTxt1")
                                     span(class="highlight")
                                     span(class="bar")
-                                    label &nbsp;
+                                    label Alias
                                 div(class="group-material")
-                                    input(value=datos.clave id="pass" name='pass' type="password" class="material-control tooltips-general" placeholder="Contraseña" required="" maxlength="50" data-toggle="tooltip" data-placement="top" title="Contraseña")      
+                                    input(data-error=".errorTxt2" value=datos.clave id="pass" name='pass' type="password" class="material-control" placeholder="Ingrese Su Contraseña" required="" maxlength="50" title="")      
+                                    div(class="errorTxt2")
                                     span(class="highlight")
                                     span(class="bar")
-                                    label &nbsp;        
+                                    label Contraseña        
                                 div(class="group-material")
-                                    input(value=datos.clave id="cpassword" name="cpassword" type="password" class="material-control tooltips-general" placeholder="Repetir Contraseña" required="" maxlength="50" data-toggle="tooltip" data-placement="top" title="Repetir Contraseña")
+                                    input(data-error=".errorTxt3" value=datos.clave id="cpassword" name="cpassword" type="password" class="material-control" placeholder="Ingrese Su Repetir Contraseña" required="" maxlength="50" title="")
+                                    div(class="errorTxt3")
                                     span(class="highlight")
                                     span(class="bar")
-                                    label &nbsp;
+                                    label Repetir Contraseña
                                 div(class="group-material")
-                                    input(value=datos.nombre name="nombre" type="text" class="material-control tooltips-general" placeholder="Nombres" required="" pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{1,50}" maxlength="50" data-toggle="tooltip" data-placement="top" title="Nombres del estudiante")
+                                    input(data-error=".errorTxt4" value=datos.nombre name="nombre" type="text" class="material-control" placeholder="Ingrese Su Nombres" required="" pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{1,50}" maxlength="50" title="")
+                                    div(class="errorTxt4")
                                     span(class="highlight")
                                     span(class="bar")
-                                    label &nbsp;
+                                    label Nombre
                                 div(class="group-material")
-                                    input(value=datos.ap id="ap" name="ap" type="text" class="material-control tooltips-general" placeholder="Apellido Paterno" pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{1,50}" maxlength="50" data-toggle="tooltip" data-placement="top" title="Apellido paterno del estudiante")
+                                    input(data-error=".errorTxt5" value=datos.ap id="ap" name="ap" type="text" class="material-control" placeholder="Ingrese Su Apellido Paterno" pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{1,50}" maxlength="50" title="")
+                                    div(class="errorTxt5")
                                     span(class="highlight")
                                     span(class="bar")
-                                    label &nbsp;
+                                    label Apellido Paterno
                                 div(class="group-material")
-                                    input(value=datos.am id="am" name="am" type="text" class="material-control tooltips-general" placeholder="Apellido Materno" pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{1,50}" maxlength="50" data-toggle="tooltip" data-placement="top" title="Apellido materno del estudiante")
+                                    input(data-error=".errorTxt6" value=datos.am id="am" name="am" type="text" class="material-control" placeholder="Ingrese Su Apellido Materno" pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{1,50}" maxlength="50" title="")
+                                    div(class="errorTxt6")
                                     span(class="highlight")
                                     span(class="bar")
-                                    label &nbsp;
+                                    label Apellido Materno
                                 div(class="group-material")
-                                    input(value=datos.email name="email" type="email" class="material-control tooltips-general" placeholder="Correo Electrónico" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" maxlength="50" data-toggle="tooltip" data-placement="top" title="Correo electrónico")
+                                    input(data-error=".errorTxt7" value=datos.email name="email" type="email" class="material-control" placeholder="Ingrese Su Correo Electrónico" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" maxlength="50" title="")
+                                    div(class="errorTxt7")
                                     span(class="highlight")
                                     span(class="bar")
-                                    label &nbsp;
+                                    label Correo Electrónico
                                 if datos.telefono==0
                                     -datos.telefono=''
                                 div(class="group-material")
-                                    input(value=datos.telefono name="telf" type="tel" class="material-control tooltips-general" placeholder="Celular" pattern="{8}" min="60000000" max="79999999" maxlength="8" data-toggle="tooltip" data-placement="top" title="Solamente 8 digitos")
+                                    input(data-error=".errorTxt8" value=datos.telefono name="telf" type="tel" class="material-control" placeholder="Ingrese Su Numero De Celular" pattern="{8}" min="60000000" max="79999999" maxlength="8" title="")
+                                    div(class="errorTxt8")
                                     span(class="highlight")
                                     span(class="bar")
-                                    label &nbsp;
+                                    label Celular;
                                 p(class="text-center")
                                     button(type="reset" class="btn btn-info" style="margin-right: 20px;")
                                         i(class="zmdi zmdi-roller")
@@ -101,45 +109,53 @@ html(lang='es')
                             div(class="col-xs-12 col-sm-8 col-sm-offset-2")
 
                                 div(class="group-material")               
-                                    input(name="alias" type="text" class="material-control tooltips-general" placeholder="Alias" required=""  maxlength="50" data-toggle="tooltip" data-placement="top" title="Alias")
+                                    input(data-error=".errorTxt1" name="alias" type="text" class="material-control" placeholder="Ingrese Su Alias" required=""  maxlength="50" title="")
+                                    div(class="errorTxt1")
                                     span(class="highlight")
                                     span(class="bar")
-                                    label &nbsp;
+                                    label Alias
                                 div(class="group-material")
-                                    input(id="pass" name='pass' type="password" class="material-control tooltips-general" placeholder="Contraseña" required="" maxlength="50" data-toggle="tooltip" data-placement="top" title="Contraseña")      
+                                    input(data-error=".errorTxt2" id="pass" name='pass' type="password" class="material-control" placeholder="Ingrese Su Contraseña" required="" maxlength="50" title="")      
+                                    div(class="errorTxt2")
                                     span(class="highlight")
                                     span(class="bar")
-                                    label &nbsp;        
+                                    label Contraseña        
                                 div(class="group-material")
-                                    input(id="cpassword" name="cpassword" type="password" class="material-control tooltips-general" placeholder="Repetir Contraseña" required="" maxlength="50" data-toggle="tooltip" data-placement="top" title="Repetir Contraseña")
+                                    input(data-error=".errorTxt3" id="cpassword" name="cpassword" type="password" class="material-control" placeholder="Repetir Su Contraseña" required="" maxlength="50" title="")
+                                    div(class="errorTxt3")
                                     span(class="highlight")
                                     span(class="bar")
-                                    label &nbsp;
+                                    label Repetir Contraseña
                                 div(class="group-material")
-                                    input(name="nombre" type="text" class="material-control tooltips-general" placeholder="Nombres" required="" pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{1,50}" maxlength="50" data-toggle="tooltip" data-placement="top" title="Nombres del estudiante")
+                                    input(data-error=".errorTxt4" name="nombre" type="text" class="material-control" placeholder="Ingrese Su Nombres" required="" pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ]{1,50}" maxlength="50" title="")
+                                    div(class="errorTxt4")
                                     span(class="highlight")
                                     span(class="bar")
-                                    label &nbsp;
+                                    label Nombre
                                 div(class="group-material")
-                                    input(id="ap" name="ap" type="text" class="material-control tooltips-general" placeholder="Apellido Paterno" pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{1,50}" maxlength="50" data-toggle="tooltip" data-placement="top" title="Apellido paterno del estudiante")
+                                    input(data-error=".errorTxt5" id="ap" name="ap" type="text" class="material-control" placeholder="Ingrese Su Apellido Paterno" pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ]{1,50}" maxlength="50" title="")
+                                    div(class="errorTxt5")
                                     span(class="highlight")
                                     span(class="bar")
-                                    label &nbsp;
+                                    label Apellido Paterno
                                 div(class="group-material")
-                                    input(id="ap" name="am" type="text" class="material-control tooltips-general" placeholder="Apellido Materno" pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{1,50}" maxlength="50" data-toggle="tooltip" data-placement="top" title="Apellido materno del estudiante")
+                                    input(data-error=".errorTxt6" id="ap" name="am" type="text" class="material-control" placeholder="Ingrese Su Apellido Materno" pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ]{1,50}" maxlength="50" title="")
+                                    div(class="errorTxt6")
                                     span(class="highlight")
                                     span(class="bar")
-                                    label &nbsp;
+                                    label Apellido Materno
                                 div(class="group-material")
-                                    input(name="email" type="email" class="material-control tooltips-general" placeholder="Correo Electrónico" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" maxlength="50" data-toggle="tooltip" data-placement="top" title="Correo electrónico")
+                                    input(data-error=".errorTxt7" name="email" type="email" class="material-control" placeholder="Ingrese Su Correo Electrónico" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" maxlength="50" title="")
+                                    div(class="errorTxt7")
                                     span(class="highlight")
                                     span(class="bar")
-                                    label &nbsp;
+                                    label Correo Electrónico
                                 div(class="group-material")
-                                    input(name="telf" type="tel" class="material-control tooltips-general" placeholder="Celular" pattern="{8}" min="60000000" max="79999999" maxlength="8" data-toggle="tooltip" data-placement="top" title="Solamente 8 digitos")
+                                    input(data-error=".errorTxt8" name="telf" type="tel" class="material-control" placeholder="Ingrese Su Numero Celular" pattern="{8}" min="60000000" max="79999999" maxlength="8" title="")
+                                    div(class="errorTxt8")
                                     span(class="highlight")
                                     span(class="bar")
-                                    label &nbsp;
+                                    label Celular
                                 p(class="text-center")
                                     button(type="reset" class="btn btn-info" style="margin-right: 20px;")
                                         i(class="zmdi zmdi-roller")

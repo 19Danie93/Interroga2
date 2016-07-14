@@ -6,7 +6,7 @@ exports.aniadir_tema_post = function(req,res) {
 				res.redirect('/administrador/aniadir_tema');
 		}else{
 			consulta.lista_tema(function(result) {
-				res.render('aniadir_tema.jade',{error:'ya existe un tema con el mismo nombre',lista:result});
+				res.render('aniadir_tema.jade',{error:'ya existe un tema con el mismo nombre',lista:result,nombre : req.user.nombre});
 			});
 		}
 
@@ -16,7 +16,7 @@ exports.aniadir_tema_post = function(req,res) {
 
 exports.aniadir_tema_get = function(req,res) {
 	consulta.lista_tema(function(result) {
-		res.render('aniadir_tema.jade',{lista:result});
+		res.render('aniadir_tema.jade',{lista:result,nombre : req.user.nombre});
 	});
 }
 

@@ -17,19 +17,19 @@ var idmaxres=function(callback){
     });
 }
 
-exports.lista_pregunta = function (callback) {  
+exports.lista_pregunta = function (callback) {
 	db.query(
 		"select * from pregunta order by idpreg",
 		function (error, result){
 			callback(result.rows);
-    });   
+    });
 }
 
 var aniadir_respuesta = function (pregunta,respuesta,estado,callback) {
     idmaxres(
     	function(result) {
     		result=result+1;
-    		db.query(    			
+    		db.query(
 				"insert into respuesta values("+result+","+pregunta+",'"+respuesta[0]+"',"+estado[0]+");"+
 				"insert into respuesta values("+(result+1)+","+pregunta+",'"+respuesta[1]+"',"+estado[1]+");"+
 				"insert into respuesta values("+(result+2)+","+pregunta+",'"+respuesta[2]+"',"+estado[2]+");"+
@@ -46,30 +46,32 @@ var aniadir_respuesta = function (pregunta,respuesta,estado,callback) {
 		  			callback(resultado);
 	    	});
     	}
-    );	    
+    );
 }
 
 exports.aniadir_pregunta = function (pregunta,tema,respuestas,callback) {
     idmaxpre(
     	function(result) {
     		result=result+1;
-    		db.query(    			
+    		db.query(
 				"insert into pregunta values("+result+",'"+tema+"','"+pregunta+"');",
 				function (error, res){
 					var resultado;
 					if(res===undefined){
-						resultado=-1;
+						resultado=false;
 					}else{
 						//var estado=true;
 						console.log(respuestas);
-						//for (var i = 0; i < respuestas.length; i++) {							
+						//for (var i = 0; i < respuestas.length; i++) {
 							aniadir_respuesta(result,respuestas,[true,false,false,false],function(argument) {});
 							//estado=false;
-						//};						
+						//};
 						resultado=true;
 					}
 		  			callback(resultado);
 	    	});
     	}
-    );	    
+    );
 }
+//select * from pregunta order by random() LIMIT 5;
+//insert into preguntapartida values(1,6),(1,9),(1,7),(1,2),(1,5)

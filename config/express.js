@@ -36,7 +36,7 @@ module.exports = function() {
     require(rutas+'administrador.route.js')(app);
     require(rutas+'aniadir_pregunta.route.js')(app);
     require(rutas+'aniadir_tema.route.js')(app);
-    //require(rutas+'panel_d.server.route.js')(app);
+    require(rutas+'crear_partida.route.js')(app);
     app.use(express.static('./public'));
     //require(rutas+'aniadir_public.server.route.js')(socket);
 
