@@ -1,0 +1,52 @@
+doctype html
+html(lang='es')
+    head
+        title Interroga2
+        meta(charset='utf-8')
+        meta(name='viewport' content='width=device-width, initial-scale=1')
+        link(rel='Shortcut Icon' type='image/x-icon' href='assets/icons/book.ico')
+        script(src='js/sweet-alert.min.js')
+        link(rel='stylesheet' href='css/sweet-alert.css')
+        link(rel='stylesheet' href='css/material-design-iconic-font.min.css')
+        link(rel='stylesheet' href='css/normalize.css')
+        link(rel='stylesheet' href='css/bootstrap.min.css')
+        link(rel='stylesheet' href='css/jquery.mCustomScrollbar.css')
+        link(rel='stylesheet' href='css/style.css')
+        link(rel='stylesheet' href='css/login.css')
+        script(src='js/jquery-1.11.2.min.js')
+        script(src='js/modernizr.js')
+        script(src='js/bootstrap.min.js')
+        script(src='js/jquery.mCustomScrollbar.concat.min.js')
+        script(src='js/main.js')
+    body(class='full-cover-background' style='background-image:url(assets/img/font-login.png);')
+        div(class='form-container')
+            p(class='text-center' style='margin-top: 17px;')
+                i(class='zmdi zmdi-account-circle zmdi-hc-3x')
+            h4(class='text-center all-tittles' style='margin-bottom: 30px;') inicia sesión con tu cuenta
+            form(action='/' method='post')
+                div(class='group-material-login')
+                    input(name='alias' type='text' class='material-login-control' required='' maxlength='70')
+                    span(class='highlight-login')
+                    span(class='bar-login')
+                    label
+                        i(class='zmdi zmdi-account')
+                        span &nbsp; Alias
+                div(class='group-material-login')
+                    input(name='clave' type='password' class='material-login-control' required='' maxlength='70')
+                    span(class='highlight-login')
+                    span(class='bar-login')
+                    label 
+                        i(class='zmdi zmdi-lock') 
+                        span &nbsp; Contraseña
+                div(class='group-material-login')
+                    if error
+                        center
+                            p(class='text-danger bg-danger')= error
+                div(class='group-material-login')
+                    button(class='btn-login' type='submit') Ingresar al sistema &nbsp; 
+                        i(class='zmdi zmdi-arrow-right')
+                br
+                div(class='group-material-login')
+                    center
+                        p No tienes una cuenta?, Para crearte una cuenta haz &nbsp;
+                        a(class='btn btn-success'  href='crear_cuenta') Clic aqui                    

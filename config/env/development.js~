@@ -1,0 +1,10 @@
+module.exports={
+    db             : {
+    			         host : 'localhost',
+    			         user : 'postgres',
+    			         password : 'basilio',
+    			         database : 'interroga2'
+				},
+    sesssionSecret : 'interroga2-uajms'
+}
+
