@@ -9,7 +9,7 @@ exports.crear_cuenta = function(req,res) {
                 console.log('es la respuesta');
                 console.log(result);
                 req.flash('errorDatos','prueba con otro alias y/o contraseña');
-                res.redirect('/crear_cuenta_error');
+                res.redirect('/error');
            }
         }
     );    
@@ -29,7 +29,7 @@ exports.actualizarUsuario = function(req,res) {
                 res.redirect('/');
             }else{
                 req.flash('errorDatos','prueba con otro alias y/o contraseña');
-                res.redirect('/crear_cuenta_error');
+                res.redirect('/error');
            }
         }
     );

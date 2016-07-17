@@ -43,9 +43,9 @@ html(lang='es')
                 div(class="title-flat-form title-flat-blue") Error
                 -ruta='/crear_cuenta'
                 if usuario==1
-                    -ruta='/administrador/crear_cuenta'
+                    -ruta='/administrador/modificar'
                 if usuario==2
-                    -ruta='/usuario/crear_cuenta'
+                    -ruta='/usuario/modificar'
                 form(autocomplete="off" action=ruta method='get' id='formValidate')  
                       div.row      
                             center

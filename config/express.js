@@ -34,7 +34,8 @@ module.exports = function() {
      require(rutas+'crear_cuenta.route.js')(app);
     require(rutas+'usuario.route.js')(app);
     require(rutas+'administrador.route.js')(app);
-    require(rutas+'aniadir_preguntas.route.js')(app);
+    require(rutas+'aniadir_pregunta.route.js')(app);
+    require(rutas+'aniadir_tema.route.js')(app);
     //require(rutas+'panel_d.server.route.js')(app);
     app.use(express.static('./public'));
     //require(rutas+'aniadir_public.server.route.js')(socket);

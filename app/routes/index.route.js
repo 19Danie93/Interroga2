@@ -3,8 +3,9 @@ var passport= require('passport');
 
 module.exports = function(app) {
 	app.get('/',function(req,res,next)
-	    {	
-	    	if(req.isAuthenticated()){
+	    {		    	
+	    	if(req.isAuthenticated()){	    		
+	    		req.session.ruta=undefined;
 	    		req.logout();
 	    		next();
 	    	}else{

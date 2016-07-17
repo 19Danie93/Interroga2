@@ -1,0 +1,144 @@
+doctype html(lang='es')
+head
+    title Interroga2
+     
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+     
+    link(rel='Shortcut Icon', type='image/x-icon', href='assets/icons/book.ico')
+     
+    script(src='js/sweet-alert.min.js')
+     
+    link(rel='stylesheet', href='css/sweet-alert.css')
+     
+    link(rel='stylesheet', href='css/material-design-iconic-font.min.css')
+     
+    link(rel='stylesheet', href='css/normalize.css')
+     
+    link(rel='stylesheet', href='css/bootstrap.min.css')
+     
+    link(rel='stylesheet', href='css/jquery.mCustomScrollbar.css')
+     
+    link(rel='stylesheet', href='css/style.css')
+     
+    link(rel='stylesheet', href='css/login.css')
+     
+    script(src='js/jquery-1.11.2.min.js')
+     
+    script(src='js/modernizr.js')
+     
+    script(src='js/bootstrap.min.js')
+     
+    script(src='js/jquery.mCustomScrollbar.concat.min.js')
+     
+    script(src='js/main.js')
+  body
+    div.navbar-lateral.full-reset
+      div.visible-xs.font-movile-menu.mobile-menu-button
+       
+      div.full-reset.container-menu-movile.custom-scroll-containers
+        div.logo.full-reset.all-tittles Administrador
+          i.visible-xs.zmdi.zmdi-close.pull-left.mobile-menu-button(style='line-height: 55px; cursor: pointer; padding: 0 10px; margin-left: 7px;')
+         
+        div.full-reset(style='background-color:#2B3D51; padding: 10px 0; color:#fff;')
+          figure
+            img.img-responsive.center-box(src='assets/img/logo.png', alt='Biblioteca', style='width:55%;')
+             
+            p.text-center(style='padding-top: 15px;') Interroga2
+         
+        div.full-reset.nav-lateral-list-menu
+          ul.list-unstyled
+            li
+              a(href='home.html')
+                i.zmdi.zmdi-assignment-o.zmdi-hc-fw
+                &nbsp; &nbsp;A&ntilde;adir Partida
+             
+            li
+              a(href='report.html')
+                i.zmdi.zmdi-assignment-o.zmdi-hc-fw
+                &nbsp; &nbsp;A&ntilde;adir Temas
+             
+            li
+              a(href='advancesettings.html')
+                i.zmdi.zmdi-assignment-o.zmdi-hc-fw
+                &nbsp; &nbsp;A&ntilde;adir Preguntas
+     
+    div.content-page-container.full-reset.custom-scroll-containers
+      nav.navbar-user-top.full-reset
+        ul.list-unstyled.full-reset
+          figure
+            img.img-responsive.img-circle.center-box(src='assets/img/user01.png', alt='user-picture')
+           
+          li(style='color:#fff; cursor:default;')
+            span.all-tittles Admin Name
+           
+          li.tooltips-general.exit-system-button(data-href='index.html', data-placement='bottom', title='Salir del sistema')
+            i.zmdi.zmdi-power
+           
+          li.tooltips-general.search-book-button(data-href='searchbook.html', data-placement='bottom', title='Configurar Cuenta')
+            i.zmdi.zmdi-wrench.zmdi-hc-fw
+           
+          li.tooltips-general.btn-help(data-placement='bottom', title='Ayuda')
+            i.zmdi.zmdi-help-outline.zmdi-hc-fw
+           
+          li.mobile-menu-button.visible-xs(style='float: left !important;')
+            i.zmdi.zmdi-menu
+      // inico
+      div.container
+        div.page-header
+          h1.all-tittles Score
+            small &nbsp; Puntuaci&oacute;n
+       
+      section.full-reset.text-center(style='padding: 40px 0;')
+        article.tile
+          div.tile-icon.full-reset
+            &nbsp;
+            i.zmdi.zmdi-face
+          div.tile-name.all-tittles Alias
+          div.tile-num.full-reset 7
+         
+        article.tile
+          div.tile-icon.full-reset
+            &nbsp;
+            i.zmdi.zmdi-face
+          div.tile-name.all-tittles Alias
+          div.tile-num.full-reset 7
+          
+        article.tile
+          div.tile-icon.full-reset
+            &nbsp;
+            i.zmdi.zmdi-face
+          div.tile-name.all-tittles Alias
+          div.tile-num.full-reset 7
+              
+        article.tile
+          div.tile-icon.full-reset
+            &nbsp;
+            i.zmdi.zmdi-face
+          div.tile-name.all-tittles Alias
+          div.tile-num.full-reset 7          
+        
+      // fin
+      footer.footer.full-reset
+        div.container-fluid
+          div.row
+            div.col-xs-12.col-sm-6
+              h4.all-tittles Acerca de
+               
+              p Interroga2, juego de preguntas.
+             
+            div.col-xs-12.col-sm-6
+              h4.all-tittles Desarrolladores
+               
+              ul.list-unstyled
+                li
+                  i.zmdi.zmdi-check.zmdi-hc-fw
+                  &nbsp;Elvis Basilio &nbsp;
+                   
+                  i.zmdi.zmdi-check.zmdi-hc-fw
+                  &nbsp;Carlos Llanos &nbsp;
+                   
+                  i.zmdi.zmdi-check.zmdi-hc-fw
+                  &nbsp;Carlos Condori
+         
+        div.footer-copyright.full-reset.all-tittles 2016 Interroga2

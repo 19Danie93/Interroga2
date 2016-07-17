@@ -19,7 +19,7 @@ module.exports = function(app) {
 	    	}
 	    },cuenta.actualizarUsuario);
 
-	app.get('/administrador/crear_cuenta',function(req,res,next)
+	app.get('/administrador/modificar',function(req,res,next)
 	    {	
 	    	if(req.isAuthenticated() && req.user.idrol===1){	
 	    		next();
@@ -28,7 +28,7 @@ module.exports = function(app) {
 	    	}
 	    },cuenta.modificarAdmin);
     
-    app.get('/usuario/crear_cuenta',function(req,res,next)
+    app.get('/usuario/modificar',function(req,res,next)
 	    {	
 	    	if(req.isAuthenticated() && req.user.idrol===2){	
 	    		next(); 
@@ -37,7 +37,7 @@ module.exports = function(app) {
 	    	}
 	    },cuenta.modificarUsuario);
 
-    app.get('/crear_cuenta_error',function(req,res,next)
+    app.get('/error',function(req,res,next)
 	    {	
 	    	if(req.session.ruta===undefined){	
 	    		res.redirect("/");
