@@ -18,6 +18,7 @@ html(lang='es')
         script(src='/js/bootstrap.min.js')
         script(src='/js/jquery.mCustomScrollbar.concat.min.js')
         script(src='/js/main.js')
+        script(src='/js/modificar_tema.js')
     body
         div(class="navbar-lateral full-reset")
             div(class="visible-xs font-movile-menu mobile-menu-button")
@@ -26,7 +27,7 @@ html(lang='es')
                     i(class="visible-xs zmdi zmdi-close pull-left mobile-menu-button" style="line-height: 55px; cursor: pointer; padding: 0 10px; margin-left: 7px;")
                 div(class="full-reset" style="background-color:#2B3D51; padding: 10px 0; color:#fff;")
                     figure
-                        img(src="/assets/img/logo.png" alt="Biblioteca" class="img-responsive center-box" style="width:55%;")
+                        img(src="/assets/img/logo.png" alt="Interroga2" class="img-responsive center-box" style="width:55%;")
                         p(class="text-center" style="padding-top: 15px;") Interroga2
         div(class="content-page-container full-reset custom-scroll-containers")
             nav(class="navbar-user-top full-reset")
@@ -52,7 +53,7 @@ html(lang='es')
                             center
                                 p(class='text-danger bg-danger')= error
                            p(class="text-center")
-                                button(type="submit" class="btn btn-primary")
+                                button(value="excluir" type="submit" class="btn btn-primary")
                                     i(class="zmdi zmdi-floppy")
                                     span &nbsp;&nbsp; Añadir Tema
                                 br
@@ -75,11 +76,11 @@ html(lang='es')
                     div.table-responsive
                       div.div-table(style='margin:0 !important;')
                         div.div-table-row.div-table-row-list
-                          div.div-table-cell(style='width: 6%;')= index
-                          div.div-table-cell(style='width: 22%;')= i.nombretema               
-                          div.div-table-cell(style='width: 8%;')
-                            button.btn.btn-danger
-                              i.zmdi.zmdi-delete
+                            div.div-table-cell(id="idtema" style='width: 6%;')= index
+                            div.div-table-cell(id=i.idtema style='width: 22%;' )= i.nombretema
+                            div.div-table-cell(style='width: 8%;')
+                                button.btn.btn-danger(id="botonMod" type="submit" value=i.idtema)
+                                    i.zmdi.zmdi-delete
 
             footer(class="footer full-reset")
                 div(class="container-fluid")

@@ -31,7 +31,7 @@ module.exports = function() {
     app.use(passport.session());
 
     require(rutas+'index.route.js')(app);
-     require(rutas+'crear_cuenta.route.js')(app);
+    require(rutas+'crear_cuenta.route.js')(app);
     require(rutas+'usuario.route.js')(app);
     require(rutas+'administrador.route.js')(app);
     require(rutas+'aniadir_pregunta.route.js')(app);

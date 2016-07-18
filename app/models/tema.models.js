@@ -5,8 +5,7 @@ var idmax=function(callback){
     db.query(
 		"select max(idtema) from tema",
 		function (error, result){
-  			idusuario=result.rows[0].max;
-			callback(idusuario);
+			callback(result.rows[0].max);
     });
 }
 
@@ -31,17 +30,41 @@ exports.aniadir_tema = function (req,callback) {
     );	    
 }
 
-exports.modificar_tema = function (req,callback) {     
+exports.modificar_tema = function (idtema,nombretema,callback) {  
+	db.query(    			
+		"update tema set nombretema='"+nombretema+"' WHERE idtema="+idtema+";",
+		function (error, res){
+			var resultado;
+			if(res===undefined){
+				resultado=false;
+				console.log(error);
+			}else{
+				resultado=true;
+			}
+  			callback(resultado);
+	});	     
 }
 
-exports.validar_tema = function (req,callback) {     
+exports.validar_tema = function (req,callback) {
+	onsole.log(req.body.tema);
+    var tema=req.body.tema;
+	db.query(    			
+		"select * from tema where(nombretema="+tema+");",
+		function (error, res){
+			var resultado;
+			if(res===undefined){
+				resultado=false;
+			}else{
+				resultado=true;
+			}
+  			callback(resultado);
+	});	        
 }
 
 exports.lista_tema = function (callback) {  
 	db.query(
-		"select * from tema",
+		"select * from tema order by idtema",
 		function (error, result){
-  			idusuario=result.rows;
-			callback(idusuario);
+			callback(result.rows);
     });   
 }

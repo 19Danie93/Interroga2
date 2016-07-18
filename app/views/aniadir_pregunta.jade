@@ -3,20 +3,20 @@ head
     title Interroga2
     meta(charset='utf-8')
     meta(name='viewport', content='width=device-width, initial-scale=1')
-    link(rel='Shortcut Icon', type='image/x-icon', href='assets/icons/book.ico')
+    link(rel='Shortcut Icon', type='image/x-icon', href='/assets/icons/book.ico')
     script(src='js/sweet-alert.min.js')
-    link(rel='stylesheet', href='css/sweet-alert.css')
-    link(rel='stylesheet', href='css/material-design-iconic-font.min.css')
-    link(rel='stylesheet', href='css/normalize.css')
-    link(rel='stylesheet', href='css/bootstrap.min.css')
-    link(rel='stylesheet', href='css/jquery.mCustomScrollbar.css')
-    link(rel='stylesheet', href='css/style.css')
-    link(rel='stylesheet', href='css/login.css')
-    script(src='js/jquery-1.11.2.min.js')
-    script(src='js/modernizr.js')
-    script(src='js/bootstrap.min.js')
-    script(src='js/jquery.mCustomScrollbar.concat.min.js')
-    script(src='js/main.js')
+    link(rel='stylesheet', href='/css/sweet-alert.css')
+    link(rel='stylesheet', href='/css/material-design-iconic-font.min.css')
+    link(rel='stylesheet', href='/css/normalize.css')
+    link(rel='stylesheet', href='/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/css/jquery.mCustomScrollbar.css')
+    link(rel='stylesheet', href='/css/style.css')
+    link(rel='stylesheet', href='/css/login.css')
+    script(src='/js/jquery-1.11.2.min.js')
+    script(src='/js/modernizr.js')
+    script(src='/js/bootstrap.min.js')
+    script(src='/js/jquery.mCustomScrollbar.concat.min.js')
+    script(src='/js/main.js')
   body
     div.navbar-lateral.full-reset
       div.visible-xs.font-movile-menu.mobile-menu-button
@@ -27,28 +27,28 @@ head
     
         div.full-reset(style='background-color:#2B3D51; padding: 10px 0; color:#fff;')
           figure
-            img.img-responsive.center-box(src='assets/img/logo.png', alt='Biblioteca', style='width:55%;')
+            img.img-responsive.center-box(src='/assets/img/logo.png', alt='Biblioteca', style='width:55%;')
             p.text-center(style='padding-top: 15px;') Interroga2
         div.full-reset.nav-lateral-list-menu
           ul.list-unstyled
             li
               a(href='home.html')
                 i.zmdi.zmdi-assignment-o.zmdi-hc-fw
-                &nbsp; &nbsp;A&ntilde;adir Partida
+                span &nbsp; &nbsp;A&ntilde;adir Partida
             li
-              a(href='report.html')
+              a(href='/administrador/aniadir_tema')
                 i.zmdi.zmdi-assignment-o.zmdi-hc-fw
-                &nbsp; &nbsp;A&ntilde;adir Temas
+                span &nbsp; &nbsp;A&ntilde;adir Temas
             li
-              a(href='advancesettings.html')
+              a(href='/administrador/aniadir_pregunta')
                 i.zmdi.zmdi-assignment-o.zmdi-hc-fw
-                &nbsp; &nbsp;A&ntilde;adir Preguntas
+                span &nbsp; &nbsp;A&ntilde;adir Preguntas
 
     div.content-page-container.full-reset.custom-scroll-containers
       nav.navbar-user-top.full-reset
         ul.list-unstyled.full-reset
           figure
-            img.img-responsive.img-circle.center-box(src='assets/img/user01.png', alt='user-picture')
+            img.img-responsive.img-circle.center-box(src='/assets/img/user01.png', alt='user-picture')
           li(style='color:#fff; cursor:default;')
             span.all-tittles Admin Name
           li.tooltips-general.exit-system-button(data-href='index.html', data-placement='bottom', title='Salir del sistema')
@@ -66,69 +66,50 @@ head
       div.container-fluid
         div.container-flat-form
           div.title-flat-form.title-flat-blue A&ntilde;adir Nueva Preguntas
-          form(autocomplete='off')
+          form(autocomplete='off' action='/administrador/aniadir_pregunta' method='post')
             div.row
               div.col-xs-12.col-sm-8.col-sm-offset-2
                 div.group-material
-                  input.material-control.tooltips-general(type='text', placeholder='Escribe aquí la pregunta', pattern='[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{1,50}', required='', maxlength='50', data-toggle='tooltip', data-placement='top', title='Escribe la pregunta, solamente letras')
+                  input.material-control.tooltips-general(name="pregunta" type='text', placeholder='Escribe aquí la pregunta', pattern='[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{1,50}', required='', maxlength='50', data-toggle='tooltip', data-placement='top', title='Escribe la pregunta, solamente letras')
                   span.highlight
                   span.bar
                   label Pregunta
                 div.group-material
                   span Tema de la pregunta
-                  select.material-control.tooltips-general(data-toggle='tooltip', data-placement='top', title='Elige el tema a la cual pertenece la pregunta')
+                  select.material-control.tooltips-general(name="tema" data-toggle='tooltip', data-placement='top', title='Elige el tema a la cual pertenece la pregunta')
                     option(value='', disabled='', selected='') Selecciona una opci&oacute;n
-                    option(value='1') Introduccion a la ingenieria del software
-                    option(value='2') planificacion del proyecto de software
+                    each i in temas
+                      option(value=i.idtema)= i.nombretema
                 div.group-material
                   span Cantidad de respuestas
                   select.material-control.tooltips-general(data-toggle='tooltip', data-placement='top', title='Elige la cantidad de respuestas')
                     option(value='', disabled='', selected='') Selecciona una opci&oacute;n
                     option(value='2') 2
                     option(value='4') 4
+                
+                label Respuestas
                 div.group-material
-                  input.material-control.tooltips-general(type='text', placeholder='Escribe aquí la respuesta correcta', pattern='[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{1,50}', required='', maxlength='50', data-toggle='tooltip', data-placement='top', title='Escribe aquí la respuesta incorrecta, solamente letras')
-              
-                  span.highlight
-                   
-                  span.bar
-                   
-                  label Respuestas
-                 
+                  input.material-control.tooltips-general(name="resp1" type='text', placeholder='Escribe aquí la respuesta correcta', pattern='[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{1,50}', required='', maxlength='50', data-toggle='tooltip', data-placement='top', title='Escribe aquí la respuesta incorrecta, solamente letras')              
+                  span.highlight                   
+                  span.bar                                  
                 div.group-material
-                  input.material-control.tooltips-general(type='text', placeholder='Escribe aquí la respuesta incorrecta', pattern='[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{1,50}', required='', maxlength='50', data-toggle='tooltip', data-placement='top', title='Escribe aquí la respuesta incorrecta, solamente letras')
-                   
-                  span.highlight
-                   
-                  span.bar
-                   
-                  label
-                 
+                  input.material-control.tooltips-general(name="resp2" type='text', placeholder='Escribe aquí la respuesta incorrecta', pattern='[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{1,50}', required='', maxlength='50', data-toggle='tooltip', data-placement='top', title='Escribe aquí la respuesta incorrecta, solamente letras')                   
+                  span.highlight                   
+                  span.bar                   
                 div.group-material
-                  input.material-control.tooltips-general(type='text', placeholder='Escribe aquí la respuesta incorrecta', pattern='[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{1,50}', required='', maxlength='50', data-toggle='tooltip', data-placement='top', title='Escribe aquí la respuesta incorrecta, solamente letras')
-                   
-                  span.highlight
-                   
-                  span.bar
-                   
-                  label
-                 
+                  input.material-control.tooltips-general(name="resp3" type='text', placeholder='Escribe aquí la respuesta incorrecta', pattern='[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{1,50}', required='', maxlength='50', data-toggle='tooltip', data-placement='top', title='Escribe aquí la respuesta incorrecta, solamente letras')                   
+                  span.highlight                   
+                  span.bar                                   
                 div.group-material
-                  input.material-control.tooltips-general(type='text', placeholder='Escribe aquí la respuesta incorrecta', pattern='[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{1,50}', required='', maxlength='50', data-toggle='tooltip', data-placement='top', title='Escribe aquí la respuesta incorrecta, solamente letras')
-                   
-                  span.highlight
-                   
+                  input.material-control.tooltips-general(name="resp4" type='text', placeholder='Escribe aquí la respuesta incorrecta', pattern='[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{1,50}', required='', maxlength='50', data-toggle='tooltip', data-placement='top', title='Escribe aquí la respuesta incorrecta, solamente letras')                   
+                  span.highlight                   
                   span.bar
-                   
-                  label
-                 
                 p.text-center
                   button.btn.btn-primary(type='submit')
                     i.zmdi.zmdi-floppy
-                    &nbsp;&nbsp; A&ntilde;adir
+                    span &nbsp;&nbsp; A&ntilde;adir
                  
-                br
-                 
+                br                 
                 br
 
       div.container-fluid
@@ -162,8 +143,7 @@ head
             div.col-xs-12.col-sm-6
               h4.all-tittles Acerca de
                
-              p
-                  Interroga2, juego de preguntas.
+              p Interroga2, juego de preguntas.
              
             div.col-xs-12.col-sm-6
               h4.all-tittles Desarrolladores
@@ -171,13 +151,13 @@ head
               ul.list-unstyled
                 li
                   i.zmdi.zmdi-check.zmdi-hc-fw
-                    &nbsp;Elvis Basilio &nbsp;
+                    span &nbsp;Elvis Basilio &nbsp;
                    
                   i.zmdi.zmdi-check.zmdi-hc-fw
-                    &nbsp;Carlos Llanos &nbsp;
+                    span &nbsp;Carlos Llanos &nbsp;
                    
                   i.zmdi.zmdi-check.zmdi-hc-fw
-                    &nbsp;Carlos Condori
+                    span &nbsp;Carlos Condori
          
         div.footer-copyright.full-reset.all-tittles
             2016 Interroga2

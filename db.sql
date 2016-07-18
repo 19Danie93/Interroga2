@@ -56,7 +56,7 @@ create table pregunta(
 create table respuesta(
                                 idres int not null unique,
                                 idpreg int not null,
-                                respuesta varchar(100) not null unique,
+                                respuesta varchar(100) not null,
                                 estado boolean not null,
                                 PRIMARY KEY(idres),
                                 FOREIGN KEY(idpreg) REFERENCES pregunta(idpreg)

@@ -40,6 +40,7 @@ $(document).ready(function(){
             backdrop: "static"
         });
     });
+
 });
 (function($){
     $(window).load(function(){

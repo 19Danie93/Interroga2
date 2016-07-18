@@ -18,4 +18,13 @@ module.exports=function(app){
     		res.redirect("/");
     	}
     },pregunta.aniadir_tema_post);
+
+    app.post('/administrador/modificar_tema',function(req,res,next)
+    {	
+    	if(req.isAuthenticated() && req.user.idrol===1){	
+    		next();
+    	}else{
+    		res.redirect("/");
+    	}
+    },pregunta.modificar_tema);
 }
